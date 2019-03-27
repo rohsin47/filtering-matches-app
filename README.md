@@ -1,4 +1,4 @@
-**Filtering Matches App [Spark Networks] **
+**Filtering Matches App [Spark Networks]**
 
 This app is built using angular 7 and ionic 4. This filters the data by attributes as per the requirements defined here:
 https://github.com/sparknetworks/coding_exercises_options/blob/master/filtering_matches/README.md
