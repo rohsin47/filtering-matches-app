@@ -29,6 +29,6 @@ Launch in Browser
 ```
 http://localhost:8100/
 ```
-<div align="center">
-    <img src="/Filter_matcher.JPG" width="400px"</img> 
+<div align="left">
+    <img src="/Filter_matcher.JPG" width="700px"</img> 
 </div>
