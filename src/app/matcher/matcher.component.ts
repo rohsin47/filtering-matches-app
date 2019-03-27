@@ -9,7 +9,6 @@ import {
 } from 'rxjs/operators';
 
 import { User } from '../model/user';
-import { UserResult } from '../model/user-result';
 import { UserFilter } from '../model/user-filter';
 import { UserDataService } from '../service/user-data.service';
 
