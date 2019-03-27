@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>User Filter Matcher</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+	<ion-list>
+  		<ion-item>
+    		<ion-label>Has Photo</ion-label>
+		    	<ion-select value="hasPhoto">
+			      <ion-select-option value="yes">Yes</ion-select-option>
+			      <ion-select-option value="no">No</ion-select-option>
+		    	</ion-select>
+  		</ion-item>
+	
+  		<ion-item>
+    		<ion-label>In contact</ion-label>
+		    	<ion-select value="inContact">
+			      <ion-select-option value="yes">Yes</ion-select-option>
+			      <ion-select-option value="no">No</ion-select-option>
+		    	</ion-select>
+  		</ion-item>
+	
+  		<ion-item>
+    		<ion-label>Favorite</ion-label>
+		    	<ion-select value="favorite">
+			      <ion-select-option value="yes">Yes</ion-select-option>
+			      <ion-select-option value="no">No</ion-select-option>
+		    	</ion-select>
+  		</ion-item>
+  		
+  		 <ion-item>
+  		 	<ion-label>Compatibility Score (%)</ion-label>
+   			<ion-range min="1" max="99" step="2" value="compatibilityScore" color="secondary">
+     			<ion-icon size="small" slot="start" name="sunny"></ion-icon>
+     			<ion-icon slot="end" name="sunny"></ion-icon>
+   			</ion-range>
+ 		</ion-item>
+ 		
+ 		<ion-item>
+  		 	<ion-label>Age (yrs)</ion-label>
+   			<ion-range min="1" max="99" step="2" value="age" color="secondary">
+     			<ion-icon size="small" slot="start" name="sunny"></ion-icon>
+     			<ion-icon slot="end" name="sunny"></ion-icon>
+   			</ion-range>
+ 		</ion-item>
+ 		
+ 		<ion-item>
+  		 	<ion-label>Height (cm)</ion-label>
+   			<ion-range min="135" max="210" step="2" value="height" color="secondary">
+     			<ion-icon size="small" slot="start" name="sunny"></ion-icon>
+     			<ion-icon slot="end" name="sunny"></ion-icon>
+   			</ion-range>
+ 		</ion-item>
+
+	</ion-list>
+	
+	<ion-grid style="border: think solid black;">
+	  <ion-row style="background:#D3D3D3; font-size: 14px !important; font-weight: bold">
+	    <ion-col>
+	      <div><p>Name</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>Age (yrs)</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>Height (cm)</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>Job Title</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>Photo</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>Compatibility Score (%)</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>Contacts</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>Favourite</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>Religion</p></div>
+	    </ion-col>
+	  </ion-row>
+	  <div *ngIf="users">
+	    <ion-row align-items-center *ngFor="let user of users" style="font-size: 12px !important">
+	  	 <ion-col>
+	      <div><p>{{user["display_name"]}}</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>{{user.age}}</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>{{user["height_in_cm"]}}</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>{{user["job_title"]}}</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div class="text-center col-xs-3">
+	          <img [src]="user['main_photo']" class="rounded" style="max-height: 50px; max-width: 50px;" alt="-">
+	      </div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>{{user["compatibility_score"]}}</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>{{user["contacts_exchanged"]}}</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>{{user["favourite"]}}</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>{{user.religion}}</p></div>
+	    </ion-col>
+	  </ion-row>
+	  </div>
+	</ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>For Spark Networks</ion-title>
+  </ion-toolbar>
+</ion-footer>
