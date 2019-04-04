@@ -26,6 +26,7 @@ export class MatcherComponent {
     height: { lower: number; upper: number; } = {'lower':135, 'upper':210};
     users: User[];
     model = new UserFilter();
+    loggedInUser: User;
 
   constructor(private userDataService: UserDataService) { 
       this.loadUsers();
@@ -33,6 +34,16 @@ export class MatcherComponent {
 
   loadUsers() {
     this.users = this.userDataService.getUsers();
+    this.loggedInUser = this.users[0];
+    this.users.forEach(user => this.calcDistance(user));
+  }
+  
+  calcDistance(user: User){
+     user.distance = this.userDataService.calculateDistance(
+              this.loggedInUser.city.lat, 
+              user.city.lat, 
+              this.loggedInUser.city.lon, 
+              user.city.lon)
   }
   
   filterUsers(event) {

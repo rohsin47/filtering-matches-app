@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>User Filter Matcher
+    <ion-title>
+    	<ion-label>User Filter Matcher</ion-label>
     	<ion-button float-right shape="round" size="small" (click)="filterUsers($event)">Filter</ion-button>
     </ion-title>   
   </ion-toolbar>
@@ -57,6 +58,14 @@
      			<ion-icon slot="end" name="sunny"></ion-icon>
    			</ion-range>
  		</ion-item>
+ 		
+ 		<ion-item>
+    		<ion-label>Distance (km)</ion-label>
+		    	<ion-select [(ngModel)]="distance">
+			      <ion-select-option value="lowerBound">Within 30</ion-select-option>
+			      <ion-select-option value="upperBound">Beyond 300</ion-select-option>
+		    	</ion-select>
+  		</ion-item>
 
 	</ion-list>
 	
@@ -89,6 +98,9 @@
 	    <ion-col>
 	      <div><p>Religion</p></div>
 	    </ion-col>
+	    <ion-col>
+	      <div><p>Distance (km)</p></div>
+	    </ion-col>
 	  </ion-row>
 	  <div *ngIf="users">
 	    <ion-row align-items-center *ngFor="let user of users" style="font-size: 12px !important">
@@ -120,6 +132,9 @@
 	    </ion-col>
 	    <ion-col>
 	      <div><p>{{user.religion}}</p></div>
+	    </ion-col>
+	    <ion-col>
+	      <div><p>{{user.distance}}</p></div>
 	    </ion-col>
 	  </ion-row>
 	  </div>

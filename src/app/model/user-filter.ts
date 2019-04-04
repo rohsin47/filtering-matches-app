@@ -1,3 +1,5 @@
+import { User } from './user'
+
 export class UserFilter {
     hasphoto: string;
     incontact: string;
@@ -11,6 +13,7 @@ export class UserFilter {
     distanceinkm: number;
     currentlongitude: number;
     currentlatitude: number;
+    loggerInUser: User;
 
     constructor(){ }
 }

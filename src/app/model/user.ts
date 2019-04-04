@@ -9,4 +9,6 @@ export class User {
     contactsExchanged: number;
     religion: string;
     favourite: boolean;
+    distance: number;
+    city: {name: string; lat:number; lon:number};
 }
